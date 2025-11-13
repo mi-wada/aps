@@ -21,7 +21,13 @@ aps() {
 ## Usage
 
 ```shell
-aps
+$ aps
+AWS Profile Switcher
+> default [current]
+  production
+  staging
+
+(Use ↑/↓ or j/k to navigate, Enter to select, q to quit)
 ```
 
 ## Development
