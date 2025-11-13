@@ -10,10 +10,12 @@ aps is a TUI-based tool for simply switching AWS profiles.
 go install github.com/mi-wada/aps@latest
 ```
 
-2. Add alias to your shell:
+2. Add this function to your shell:
 
 ```shell
-alias aps='eval $(command aps)'
+aps() {
+  eval $(command aps)
+}
 ```
 
 ## Usage
