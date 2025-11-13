@@ -20,7 +20,7 @@ aps() {
 
 ## Usage
 
-```shell
+```console
 $ aps
 AWS Profile Switcher
 > default [current]
