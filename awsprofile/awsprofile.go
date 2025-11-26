@@ -1,7 +1,10 @@
 package awsprofile
 
 import (
+	"bufio"
+	"bytes"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 )
@@ -14,8 +17,8 @@ func List() ([]string, error) {
 		return nil, err
 	}
 
-	configPath := homeDir + "/.aws/config"
-	credentialsPath := homeDir + "/.aws/credentials"
+	configPath := filepath.Join(homeDir, ".aws", "config")
+	credentialsPath := filepath.Join(homeDir, ".aws", "credentials")
 
 	profilesMap := make(map[string]bool)
 
@@ -60,9 +63,9 @@ func parseProfilesFromFile(filePath string, stripPrefix bool) map[string]bool {
 		return profiles
 	}
 
-	lines := strings.SplitSeq(string(data), "\n")
-	for line := range lines {
-		line = strings.TrimSpace(line)
+	scanner := bufio.NewScanner(bytes.NewReader(data))
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
 		if strings.HasPrefix(line, "[") && strings.HasSuffix(line, "]") {
 			profile := strings.TrimSpace(line[1 : len(line)-1])
 			if stripPrefix {
