@@ -10,7 +10,7 @@ import (
 )
 
 // List returns all AWS profiles from ~/.aws/config and ~/.aws/credentials
-// sorted alphabetically
+// sorted alphabetically.
 func List() ([]string, error) {
 	homeDir, err := os.UserHomeDir()
 	if err != nil {

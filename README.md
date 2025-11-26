@@ -37,9 +37,3 @@ For development, use:
 ```shell
 eval $(go run .)
 ```
-
-Or add this alias to your shell:
-
-```shell
-alias aps-dev='eval $(go run /Users/wada.mitsuaki/github.com/mi-wada/aps)'
-```
