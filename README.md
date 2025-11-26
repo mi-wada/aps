@@ -2,6 +2,18 @@
 
 aps is a TUI-based tool for simply switching AWS profiles.
 
+## Usage
+
+```console
+$ aps
+AWS Profile Switcher
+> default [current]
+  production
+  staging
+
+(Use ↑/↓ or j/k to navigate, Enter to select, q to quit)
+```
+
 ## Install
 
 1. Install binary:
@@ -16,18 +28,6 @@ go install github.com/mi-wada/aps@latest
 aps() {
   eval $(command aps)
 }
-```
-
-## Usage
-
-```console
-$ aps
-AWS Profile Switcher
-> default [current]
-  production
-  staging
-
-(Use ↑/↓ or j/k to navigate, Enter to select, q to quit)
 ```
 
 ## Development
